@@ -11,3 +11,15 @@ export function matchesBedrooms(property, minBedrooms, maxBedrooms) {
     if (maxBedrooms != null && bedroom > maxBedrooms) return false;
     return true;
 }
+
+export function matchType(property,type){
+    if (!type || type === 'Any') return true;
+    return property.type.toLowerCase() === type.toLowerCase()
+}
+
+export function matchesPostcode(property, postcodeArea) {
+  if (!postcodeArea) return true;
+  return (
+    property.postcodeArea.toLowerCase() === postcodeArea.trim().toLowerCase()
+  );
+}
