@@ -23,3 +23,16 @@ export function matchesPostcode(property, postcodeArea) {
     property.postcodeArea.toLowerCase() === postcodeArea.trim().toLowerCase()
   );
 }
+
+export function filterProperties(properties, criteria) {
+  const { type, minPrice, maxPrice, minBedrooms, maxBedrooms, postcodeArea, fromDate, toDate } = criteria;
+  return properties.filter((property) => {
+    return (
+      matchesType(property, type) &&
+      matchesPrice(property, minPrice, maxPrice) &&
+      matchesBedrooms(property, minBedrooms, maxBedrooms) &&
+      matchesPostcode(property, postcodeArea) &&
+      matchesAddedDate(property, fromDate, toDate)
+    );
+  });
+}
