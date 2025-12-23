@@ -36,3 +36,18 @@ export function filterProperties(properties, criteria) {
     );
   });
 }
+
+export function addFavourite(favourites, propertyID){
+  if(favourites.includes(propertyID)){
+    return favourites;
+  }
+  return [...favourites,propertyID];
+}
+
+export function removeFavourite(favourites, propertyID){
+    return favourites.filter((id) => id !== propertyID);
+}
+
+export function clearFavourites(){
+    return [];
+}
