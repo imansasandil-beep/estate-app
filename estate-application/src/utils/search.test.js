@@ -27,3 +27,59 @@ describe("Price matching", () => {
     test("Rejects above macimum", () => {expect(matchPrice(sampleProperty,400000,450000)).toBe(false)})
 }
 );
+
+describe("Bedroom matching", () => {
+  test("Accept within bedroom range", () =>{expect(matchesBedrooms(sampleProperty,2,5)).toBe(true)})
+
+  test("Rejects below minimum bedrooms" ,() => {expect(matchBedrooms(sampleProperty,4,6)).toBe(true)})
+
+  test("Rejects above maximum" ,() => {expect(matchBedrooms(sampleProperty,null,2)).toBe(true)})
+});
+
+describe("Type and postcode matching", () => {
+  test("Matches type without case sensitive" ,() => {expect(matchesPostcode(sampleProperty,House)).toBe(true)})
+
+  test("matches postcode area without case sensitive", () => {expect(matchesPostcode(sampleProperty,br1)).toBe(true)
+})});
+
+describe("Added date matching" ,()=> {
+  test("accepts within date range", ()=> {
+    const from = new Date(2025,0,1);
+    const to = new Date(2025,0,31);
+    expect(matchesAddedDate(sampleProperty,from,to)).toBe(True)
+  })
+
+  test("rejects before from date", () => {
+    const from = new Date(2025,0,20)
+    expect(matchesAddedDate(sampleProperty,from,null)).toBe(tue)
+  })
+})
+
+describe("FilterProperties" , () => {const anotherProperty = {
+  ...sampleProperty,
+  id : 'p2',
+  type : 'Flat',
+  bedrooms : 1,
+  price : 250000,
+  postcodeArea : 'BR2'
+};
+
+  const properties = [sampleProperty,anotherProperty];
+
+  test("Filter by criteria", () =>{
+    const criteria = {type: 'House',
+      minPrice: 400000,
+      maxPrice: 600000,
+      minBedrooms: 2,
+      maxBedrooms: 4,
+      postcodeArea: 'BR1',
+      fromDate: null,
+      toDate: null,
+    };
+
+    const result = filterProperties(properties, criteria);
+    expect(result).toHaveLength(1);
+    expect(result[0].id).toBe('p1');
+  });
+
+});
