@@ -5,7 +5,11 @@ function PropertyCard({ property, onView, onAddFavourite, isFavourite }) {
   };
 
   return (
-    <article className="property-card" draggable onDragStart={handleDragStart}>
+    <article
+      className="property-card"
+      draggable
+      onDragStart={handleDragStart}
+    >
       <img
         src={property.thumbnail}
         alt={property.shortDescription}
@@ -41,3 +45,4 @@ function PropertyCard({ property, onView, onAddFavourite, isFavourite }) {
 }
 
 export default PropertyCard;
+

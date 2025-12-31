@@ -8,11 +8,11 @@ export function matchesPrice(property, minPrice, maxPrice) {
 export function matchesBedrooms(property, minBedrooms, maxBedrooms) {
     const {bedrooms} = property;
     if (minBedrooms != null && bedrooms < minBedrooms) return false;
-    if (maxBedrooms != null && bedroom > maxBedrooms) return false;
+    if (maxBedrooms != null && bedrooms > maxBedrooms) return false;
     return true;
 }
 
-export function matchType(property,type){
+export function matchesType(property,type){
     if (!type || type === 'Any') return true;
     return property.type.toLowerCase() === type.toLowerCase()
 }
@@ -22,6 +22,14 @@ export function matchesPostcode(property, postcodeArea) {
   return (
     property.postcodeArea.toLowerCase() === postcodeArea.trim().toLowerCase()
   );
+}
+
+export function matchesAddedDate(property, fromDate, toDate) {
+  if (!fromDate && !toDate) return true;
+  const addedDate = property.added;
+  if (fromDate && addedDate < fromDate) return false;
+  if (toDate && addedDate > toDate) return false;
+  return true;
 }
 
 export function filterProperties(properties, criteria) {

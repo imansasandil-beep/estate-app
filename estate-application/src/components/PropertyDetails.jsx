@@ -4,6 +4,10 @@ function PropertyDetails({ property, onBack, onToggleFavourite, isFavourite }) {
   const [activeTab, setActiveTab] = useState('description');
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
+  const handleImageClick = (index) => {
+    setActiveImageIndex(index);
+  };
+
   return (
     <div className="property-details">
       <button type="button" className="link-button" onClick={onBack}>
@@ -12,7 +16,7 @@ function PropertyDetails({ property, onBack, onToggleFavourite, isFavourite }) {
       <header className="property-header">
         <div>
           <h1>
-            {property.type} — {property.bedrooms} bedrooms
+            {property.type} – {property.bedrooms} bedrooms
           </h1>
           <p className="property-location">{property.location}</p>
           <p className="property-price large">
@@ -49,7 +53,7 @@ function PropertyDetails({ property, onBack, onToggleFavourite, isFavourite }) {
                   ? 'thumbnail-button active'
                   : 'thumbnail-button'
               }
-              onClick={() => setActiveImageIndex(index)}
+              onClick={() => handleImageClick(index)}
             >
               <img src={src} alt={`${property.type} thumbnail ${index + 1}`} />
             </button>
@@ -58,7 +62,7 @@ function PropertyDetails({ property, onBack, onToggleFavourite, isFavourite }) {
       </section>
 
       <section className="tabs">
-        <div className="tabs-list" role="tablist">
+        <div className="tabs-list" role="tablist" aria-label="Property details">
           <button
             type="button"
             role="tab"
@@ -120,3 +124,4 @@ function PropertyDetails({ property, onBack, onToggleFavourite, isFavourite }) {
 }
 
 export default PropertyDetails;
+

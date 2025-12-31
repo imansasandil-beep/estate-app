@@ -13,7 +13,9 @@ function FavouritesList({
   const handleDrop = (event) => {
     event.preventDefault();
     const id = event.dataTransfer.getData('text/plain');
-    if (id) onDropAdd(id);
+    if (id) {
+      onDropAdd(id);
+    }
   };
 
   const handleDragOver = (event) => {
@@ -23,7 +25,13 @@ function FavouritesList({
   const handleRemoveDrop = (event) => {
     event.preventDefault();
     const id = event.dataTransfer.getData('text/plain');
-    if (id) onRemoveFavourite(id);
+    if (id) {
+      onRemoveFavourite(id);
+    }
+  };
+
+  const handleRemoveDragOver = (event) => {
+    event.preventDefault();
   };
 
   return (
@@ -56,7 +64,7 @@ function FavouritesList({
                   className="link-button"
                   onClick={() => onView(property.id)}
                 >
-                  {property.type} in {property.postcodeArea} — £
+                  {property.type} in {property.postcodeArea} – £
                   {property.price.toLocaleString('en-GB')}
                 </button>
                 <button
@@ -83,7 +91,7 @@ function FavouritesList({
       <div
         className="favourites-remove-dropzone"
         onDrop={handleRemoveDrop}
-        onDragOver={handleDragOver}
+        onDragOver={handleRemoveDragOver}
       >
         Drag here to remove from favourites
       </div>
@@ -92,3 +100,4 @@ function FavouritesList({
 }
 
 export default FavouritesList;
+

@@ -1,6 +1,20 @@
+// Static property data for the estate application.
+// In a real app this would come from an API, but here we keep it client-side.
+
+// Helper to create a Date object from year, month name and day
 const monthLookup = {
-  January: 0, February: 1, March: 2, April: 3, May: 4, June: 5,
-  July: 6, August: 7, September: 8, October: 9, November: 10, December: 11,
+  January: 0,
+  February: 1,
+  March: 2,
+  April: 3,
+  May: 4,
+  June: 5,
+  July: 6,
+  August: 7,
+  September: 8,
+  October: 9,
+  November: 10,
+  December: 11,
 };
 
 const toDate = ({ year, month, day }) =>
@@ -13,8 +27,10 @@ export const properties = [
     bedrooms: 3,
     price: 750000,
     tenure: 'Freehold',
-    shortDescription: 'Attractive three bedroom semi-detached family home close to Petts Wood station and local amenities.',
-    longDescription: 'Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises two receptions, fitted 18\'9 x 10\'1 kitchen/breakfast room and conservatory.',
+    shortDescription:
+      'Attractive three bedroom semi-detached family home close to Petts Wood station and local amenities.',
+    longDescription:
+      'Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises two receptions, fitted 18\'9 x 10\'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior.',
     location: 'Petts Wood Road, Petts Wood, Orpington BR5',
     postcodeArea: 'BR5',
     pictures: [
@@ -29,7 +45,8 @@ export const properties = [
     ],
     thumbnail: '/images/prop1pic1small.jpg',
     floorplan: '/images/prop1-floorplan.jpg',
-    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9946.066!2d0.072!3d51.389',
+    mapEmbedUrl:
+      'https://www.google.com/maps?q=Petts+Wood+Road,+Petts+Wood,+Orpington+BR5&output=embed',
     added: toDate({ month: 'October', day: 12, year: 2022 }),
   },
   {
@@ -38,8 +55,10 @@ export const properties = [
     bedrooms: 2,
     price: 399995,
     tenure: 'Freehold',
-    shortDescription: 'Modern two bedroom, two bathroom garden flat with open-plan living and private courtyard.',
-    longDescription: 'Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine.',
+    shortDescription:
+      'Modern two bedroom, two bathroom garden flat with open-plan living and private courtyard.',
+    longDescription:
+      'Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine.',
     location: 'Crofton Road, Orpington BR6',
     postcodeArea: 'BR6',
     pictures: [
@@ -54,7 +73,8 @@ export const properties = [
     ],
     thumbnail: '/images/prop2pic1small.jpg',
     floorplan: '/images/prop2-floorplan.jpg',
-    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9946.066!2d0.073!3d51.39',
+    mapEmbedUrl:
+      'https://www.google.com/maps?q=Crofton+Road,+Orpington+BR6&output=embed',
     added: toDate({ month: 'September', day: 14, year: 2022 }),
   },
   {
@@ -63,8 +83,10 @@ export const properties = [
     bedrooms: 4,
     price: 950000,
     tenure: 'Freehold',
-    shortDescription: 'Spacious four bedroom detached family home with large garden and driveway.',
-    longDescription: 'A beautifully presented four bedroom detached house located in a quiet residential cul-de-sac. The ground floor offers a generous dual-aspect living room, separate dining room, and a modern kitchen with breakfast area opening onto a landscaped rear garden.',
+    shortDescription:
+      'Spacious four bedroom detached family home with large garden and driveway.',
+    longDescription:
+      'A beautifully presented four bedroom detached house located in a quiet residential cul-de-sac.',
     location: 'Oak Avenue, Bromley BR1',
     postcodeArea: 'BR1',
     pictures: [
@@ -79,7 +101,8 @@ export const properties = [
     ],
     thumbnail: '/images/prop3pic1small.jpg',
     floorplan: '/images/prop3-floorplan.jpg',
-    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9946.066!2d0.01!3d51.42',
+    mapEmbedUrl:
+      'https://www.google.com/maps?q=Oak+Avenue,+Bromley+BR1&output=embed',
     added: toDate({ month: 'January', day: 5, year: 2023 }),
   },
   {
@@ -88,8 +111,10 @@ export const properties = [
     bedrooms: 1,
     price: 275000,
     tenure: 'Leasehold',
-    shortDescription: 'Bright one bedroom flat ideal for first-time buyers, moments from the station.',
-    longDescription: 'This bright and airy one bedroom flat is located on the third floor of a modern purpose built block. The property features an open-plan kitchen and living area with Juliet balcony, a double bedroom with fitted wardrobe, and a stylish bathroom.',
+    shortDescription:
+      'Bright one bedroom flat ideal for first-time buyers, moments from the station.',
+    longDescription:
+      'This bright and airy one bedroom flat is located on the third floor of a modern purpose built block.',
     location: 'Station Road, Beckenham BR3',
     postcodeArea: 'BR3',
     pictures: [
@@ -104,7 +129,8 @@ export const properties = [
     ],
     thumbnail: '/images/prop4pic1small.jpg',
     floorplan: '/images/prop4-floorplan.jpg',
-    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9946.066!2d-0.02!3d51.4',
+    mapEmbedUrl:
+      'https://www.google.com/maps?q=Station+Road,+Beckenham+BR3&output=embed',
     added: toDate({ month: 'March', day: 20, year: 2023 }),
   },
   {
@@ -113,8 +139,10 @@ export const properties = [
     bedrooms: 5,
     price: 1250000,
     tenure: 'Freehold',
-    shortDescription: 'Substantial five bedroom period property with original features and spacious rooms.',
-    longDescription: 'A substantial five bedroom period property arranged over three floors, offering high ceilings, original fireplaces and generous living space. The ground floor comprises a formal living room, family room, and a large kitchen/diner opening to the rear garden.',
+    shortDescription:
+      'Substantial five bedroom period property with original features and spacious rooms.',
+    longDescription:
+      'A substantial five bedroom period property arranged over three floors.',
     location: 'Victoria Road, Chislehurst BR7',
     postcodeArea: 'BR7',
     pictures: [
@@ -129,7 +157,8 @@ export const properties = [
     ],
     thumbnail: '/images/prop5pic1small.jpg',
     floorplan: '/images/prop5-floorplan.jpg',
-    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9946.066!2d0.07!3d51.41',
+    mapEmbedUrl:
+      'https://www.google.com/maps?q=Victoria+Road,+Chislehurst+BR7&output=embed',
     added: toDate({ month: 'July', day: 11, year: 2023 }),
   },
   {
@@ -138,8 +167,10 @@ export const properties = [
     bedrooms: 3,
     price: 550000,
     tenure: 'Leasehold',
-    shortDescription: 'Three bedroom split-level maisonette with balcony and allocated parking.',
-    longDescription: 'A well presented three bedroom split-level maisonette arranged over the first and second floors of a small development. The property benefits from a spacious living room opening onto a private balcony, separate kitchen, three bedrooms and a family bathroom.',
+    shortDescription:
+      'Three bedroom split-level maisonette with balcony and allocated parking.',
+    longDescription:
+      'A well presented three bedroom split-level maisonette.',
     location: 'High Street, Orpington BR6',
     postcodeArea: 'BR6',
     pictures: [
@@ -154,7 +185,8 @@ export const properties = [
     ],
     thumbnail: '/images/prop6pic1small.jpg',
     floorplan: '/images/prop6-floorplan.jpg',
-    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9946.066!2d0.09!3d51.37',
+    mapEmbedUrl:
+      'https://www.google.com/maps?q=High+Street,+Orpington+BR6&output=embed',
     added: toDate({ month: 'November', day: 2, year: 2024 }),
   },
   {
@@ -163,8 +195,10 @@ export const properties = [
     bedrooms: 2,
     price: 425000,
     tenure: 'Freehold',
-    shortDescription: 'Charming two bedroom cottage with courtyard garden and modern kitchen.',
-    longDescription: 'A charming two bedroom terraced cottage located in a quiet backwater close to local shops and transport links. The property features a cosy living room with feature fireplace, modern fitted kitchen, contemporary bathroom and two bedrooms.',
+    shortDescription:
+      'Charming two bedroom cottage with courtyard garden and modern kitchen.',
+    longDescription:
+      'A charming two bedroom terraced cottage located in a quiet backwater.',
     location: 'Church Lane, Bromley BR2',
     postcodeArea: 'BR2',
     pictures: [
@@ -179,7 +213,8 @@ export const properties = [
     ],
     thumbnail: '/images/prop7pic1small.jpg',
     floorplan: '/images/prop7-floorplan.jpg',
-    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9946.066!2d0.03!3d51.39',
+    mapEmbedUrl:
+      'https://www.google.com/maps?q=Church+Lane,+Bromley+BR2&output=embed',
     added: toDate({ month: 'May', day: 28, year: 2025 }),
   },
 ];

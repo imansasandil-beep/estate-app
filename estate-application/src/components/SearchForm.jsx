@@ -1,15 +1,26 @@
 function SearchForm({ criteria, onChange }) {
   const handleChange = (field) => (event) => {
-    onChange({ ...criteria, [field]: event.target.value });
+    const value = event.target.value;
+    onChange({
+      ...criteria,
+      [field]: value,
+    });
   };
 
   const handleNumberChange = (field) => (event) => {
     const value = event.target.value;
-    onChange({ ...criteria, [field]: value ? Number(value) : '' });
+    onChange({
+      ...criteria,
+      [field]: value ? Number(value) : '',
+    });
   };
 
   const handleDateChange = (field) => (event) => {
-    onChange({ ...criteria, [field]: event.target.value || '' });
+    const value = event.target.value;
+    onChange({
+      ...criteria,
+      [field]: value || '',
+    });
   };
 
   return (
@@ -99,3 +110,4 @@ function SearchForm({ criteria, onChange }) {
 }
 
 export default SearchForm;
+
