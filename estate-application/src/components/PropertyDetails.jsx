@@ -20,7 +20,7 @@ function PropertyDetails({ property, onBack, onToggleFavourite, isFavourite }) {
           </h1>
           <p className="property-location">{property.location}</p>
           <p className="property-price large">
-            £{property.price.toLocaleString('en-GB')}
+            Rs.{property.price.toLocaleString('en-GB')}
           </p>
           <p className="property-meta">
             {property.tenure} • Added{' '}

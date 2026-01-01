@@ -21,7 +21,7 @@ function PropertyCard({ property, onView, onAddFavourite, isFavourite }) {
         </h3>
         <p className="property-location">{property.location}</p>
         <p className="property-price">
-          £{property.price.toLocaleString('en-GB')}
+          Rs.{property.price.toLocaleString('en-GB')}
         </p>
         <p className="property-meta">
           {property.bedrooms} bedrooms • {property.tenure}
