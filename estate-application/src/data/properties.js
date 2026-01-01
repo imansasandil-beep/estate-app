@@ -24,15 +24,15 @@ export const properties = [
   {
     id: 'prop1',
     type: 'House',
-    bedrooms: 3,
-    price: 750000,
+    bedrooms: 4,
+    price: 68000000,
     tenure: 'Freehold',
     shortDescription:
-      'Attractive three bedroom semi-detached family home close to Petts Wood station and local amenities.',
+      'Modern four bedroom luxury house located in a quiet residential area of Nugegoda.',
     longDescription:
-      'Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises two receptions, fitted 18\'9 x 10\'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior.',
-    location: 'Petts Wood Road, Petts Wood, Orpington BR5',
-    postcodeArea: 'BR5',
+      'A beautifully designed four bedroom luxury house situated in a peaceful residential neighborhood in Nugegoda. The property features spacious living and dining areas, a modern pantry kitchen, en-suite bedrooms, and a landscaped garden. Conveniently located close to schools, supermarkets, and main road access.',
+    location: 'Pagoda Road, Nugegoda',
+    postcodeArea: 'Colombo',
     pictures: [
       '/images/prop1pic1large.jpg',
       '/images/prop1pic2.jpg',
@@ -46,21 +46,21 @@ export const properties = [
     thumbnail: '/images/prop1pic1small.jpg',
     floorplan: '/images/prop1-floorplan.jpg',
     mapEmbedUrl:
-      'https://www.google.com/maps?q=Petts+Wood+Road,+Petts+Wood,+Orpington+BR5&output=embed',
-    added: toDate({ month: 'October', day: 12, year: 2022 }),
+      'https://www.google.com/maps?q=Pagoda+Road+Nugegoda+Sri+Lanka&output=embed',
+    added: toDate({ month: 'October', day: 18, year: 2025 }),
   },
   {
     id: 'prop2',
-    type: 'Flat',
+    type: 'Apartment',
     bedrooms: 2,
-    price: 399995,
+    price: 42000000,
     tenure: 'Freehold',
     shortDescription:
-      'Modern two bedroom, two bathroom garden flat with open-plan living and private courtyard.',
+      'Stylish two bedroom apartment with city views in central Colombo.',
     longDescription:
-      'Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine.',
-    location: 'Crofton Road, Orpington BR6',
-    postcodeArea: 'BR6',
+      'This stylish two bedroom apartment offers open-plan living, a modern fitted kitchen, and stunning city views. Located in the heart of Colombo, the apartment provides easy access to shopping malls, offices, restaurants, and entertainment hubs.',
+    location: 'Union Place, Colombo 02',
+    postcodeArea: 'Colombo',
     pictures: [
       '/images/prop2pic1large.jpg',
       '/images/prop2pic2.jpg',
@@ -74,21 +74,21 @@ export const properties = [
     thumbnail: '/images/prop2pic1small.jpg',
     floorplan: '/images/prop2-floorplan.jpg',
     mapEmbedUrl:
-      'https://www.google.com/maps?q=Crofton+Road,+Orpington+BR6&output=embed',
-    added: toDate({ month: 'September', day: 14, year: 2022 }),
+      'https://www.google.com/maps?q=Union+Place+Colombo+02+Sri+Lanka&output=embed',
+    added: toDate({ month: 'September', day: 25, year: 2025 }),
   },
   {
     id: 'prop3',
     type: 'House',
-    bedrooms: 4,
-    price: 950000,
+    bedrooms: 5,
+    price: 95000000,
     tenure: 'Freehold',
     shortDescription:
-      'Spacious four bedroom detached family home with large garden and driveway.',
+      'Spacious five bedroom family home with large garden in Battaramulla.',
     longDescription:
-      'A beautifully presented four bedroom detached house located in a quiet residential cul-de-sac.',
-    location: 'Oak Avenue, Bromley BR1',
-    postcodeArea: 'BR1',
+      'A spacious five bedroom family home located in Battaramulla. The property features multiple living areas, a large garden, ample parking, and excellent ventilation. Ideal for families seeking comfort and convenience near government offices and schools.',
+    location: 'Koswatta Road, Battaramulla',
+    postcodeArea: 'Colombo',
     pictures: [
       '/images/prop3pic1.jpg',
       '/images/prop3pic2.jpg',
@@ -102,21 +102,21 @@ export const properties = [
     thumbnail: '/images/prop3pic1small.jpg',
     floorplan: '/images/prop3-floorplan.jpg',
     mapEmbedUrl:
-      'https://www.google.com/maps?q=Oak+Avenue,+Bromley+BR1&output=embed',
-    added: toDate({ month: 'January', day: 5, year: 2023 }),
+      'https://www.google.com/maps?q=Koswatta+Road+Battaramulla+Sri+Lanka&output=embed',
+    added: toDate({ month: 'November', day: 10, year: 2025 }),
   },
   {
     id: 'prop4',
-    type: 'Flat',
+    type: 'Apartment',
     bedrooms: 1,
-    price: 275000,
-    tenure: 'Leasehold',
+    price: 28500000,
+    tenure: 'Freehold',
     shortDescription:
-      'Bright one bedroom flat ideal for first-time buyers, moments from the station.',
+      'Compact one bedroom apartment ideal for professionals in Rajagiriya.',
     longDescription:
-      'This bright and airy one bedroom flat is located on the third floor of a modern purpose built block.',
-    location: 'Station Road, Beckenham BR3',
-    postcodeArea: 'BR3',
+      'This well-maintained one bedroom apartment is perfect for professionals and young couples. Located in Rajagiriya, it offers quick access to Colombo city, supermarkets, and restaurants.',
+    location: 'Rajagiriya Road, Rajagiriya',
+    postcodeArea: 'Colombo',
     pictures: [
       '/images/prop4pic1.jpg',
       '/images/prop4pic2.jpg',
@@ -130,21 +130,21 @@ export const properties = [
     thumbnail: '/images/prop4pic1small.jpg',
     floorplan: '/images/prop4-floorplan.jpg',
     mapEmbedUrl:
-      'https://www.google.com/maps?q=Station+Road,+Beckenham+BR3&output=embed',
-    added: toDate({ month: 'March', day: 20, year: 2023 }),
+      'https://www.google.com/maps?q=Rajagiriya+Sri+Lanka&output=embed',
+    added: toDate({ month: 'December', day: 3, year: 2025 }),
   },
   {
     id: 'prop5',
     type: 'House',
-    bedrooms: 5,
-    price: 1250000,
+    bedrooms: 6,
+    price: 125000000,
     tenure: 'Freehold',
     shortDescription:
-      'Substantial five bedroom period property with original features and spacious rooms.',
+      'Luxury six bedroom villa with swimming pool in Mount Lavinia.',
     longDescription:
-      'A substantial five bedroom period property arranged over three floors.',
-    location: 'Victoria Road, Chislehurst BR7',
-    postcodeArea: 'BR7',
+      'An exclusive six bedroom luxury villa located in Mount Lavinia. The property features a private swimming pool, spacious entertainment areas, high-end finishes, and close proximity to the beach.',
+    location: 'Station Road, Mount Lavinia',
+    postcodeArea: 'Colombo',
     pictures: [
       '/images/prop5pic1.jpg',
       '/images/prop5pic2.jpg',
@@ -158,21 +158,21 @@ export const properties = [
     thumbnail: '/images/prop5pic1small.jpg',
     floorplan: '/images/prop5-floorplan.jpg',
     mapEmbedUrl:
-      'https://www.google.com/maps?q=Victoria+Road,+Chislehurst+BR7&output=embed',
-    added: toDate({ month: 'July', day: 11, year: 2023 }),
+      'https://www.google.com/maps?q=Mount+Lavinia+Sri+Lanka&output=embed',
+    added: toDate({ month: 'October', day: 30, year: 2025 }),
   },
   {
     id: 'prop6',
-    type: 'Flat',
+    type: 'Apartment',
     bedrooms: 3,
-    price: 550000,
-    tenure: 'Leasehold',
+    price: 52000000,
+    tenure: 'Freehold',
     shortDescription:
-      'Three bedroom split-level maisonette with balcony and allocated parking.',
+      'Three bedroom sea-view apartment in Wellawatte.',
     longDescription:
-      'A well presented three bedroom split-level maisonette.',
-    location: 'High Street, Orpington BR6',
-    postcodeArea: 'BR6',
+      'A spacious three bedroom apartment offering stunning sea views. Located in Wellawatte, this property provides easy access to public transport, schools, and coastal dining spots.',
+    location: 'Marine Drive, Wellawatte',
+    postcodeArea: 'Colombo',
     pictures: [
       '/images/prop6pic1.jpg',
       '/images/prop6pic2.jpg',
@@ -186,21 +186,21 @@ export const properties = [
     thumbnail: '/images/prop6pic1small.jpg',
     floorplan: '/images/prop6-floorplan.jpg',
     mapEmbedUrl:
-      'https://www.google.com/maps?q=High+Street,+Orpington+BR6&output=embed',
-    added: toDate({ month: 'November', day: 2, year: 2024 }),
+      'https://www.google.com/maps?q=Wellawatte+Sri+Lanka&output=embed',
+    added: toDate({ month: 'November', day: 22, year: 2025 }),
   },
   {
     id: 'prop7',
     type: 'House',
-    bedrooms: 2,
-    price: 425000,
+    bedrooms: 3,
+    price: 46000000,
     tenure: 'Freehold',
     shortDescription:
-      'Charming two bedroom cottage with courtyard garden and modern kitchen.',
+      'Charming three bedroom house in a calm suburb of Kandy.',
     longDescription:
-      'A charming two bedroom terraced cottage located in a quiet backwater.',
-    location: 'Church Lane, Bromley BR2',
-    postcodeArea: 'BR2',
+      'A charming three bedroom house located in a serene residential area of Kandy. Surrounded by greenery, the property offers a relaxed lifestyle while being close to the city center.',
+    location: 'Peradeniya Road, Kandy',
+    postcodeArea: 'Central',
     pictures: [
       '/images/prop7pic1.jpg',
       '/images/prop7pic2.jpg',
@@ -214,7 +214,7 @@ export const properties = [
     thumbnail: '/images/prop7pic1small.jpg',
     floorplan: '/images/prop7-floorplan.jpg',
     mapEmbedUrl:
-      'https://www.google.com/maps?q=Church+Lane,+Bromley+BR2&output=embed',
-    added: toDate({ month: 'May', day: 28, year: 2025 }),
+      'https://www.google.com/maps?q=Peradeniya+Road+Kandy+Sri+Lanka&output=embed',
+    added: toDate({ month: 'December', day: 15, year: 2025 }),
   },
 ];
