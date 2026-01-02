@@ -22,11 +22,12 @@ const toDate = ({ year, month, day }) =>
 
 // Helper to get image path with base URL for GitHub Pages compatibility
 const getImagePath = (path) => {
-  const baseUrl = import.meta.env.BASE_URL;
+  const baseUrl = import.meta.env.BASE_URL || '/estate-app/';
   // Remove leading slash from path if present
   const cleanPath = path.startsWith('/') ? path.slice(1) : path;
-  // Combine baseUrl and path, ensuring no double slashes
-  return `${baseUrl}${cleanPath}`;
+  // Ensure baseUrl ends with / and path doesn't start with /
+  const normalizedBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+  return `${normalizedBase}${cleanPath}`;
 };
 
 export const properties = [
