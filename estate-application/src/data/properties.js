@@ -51,7 +51,7 @@ export const properties = [
   },
   {
     id: 'prop2',
-    type: 'Apartment',
+    type: 'Flat',
     bedrooms: 2,
     price: 42000000,
     tenure: 'Freehold',
@@ -107,7 +107,7 @@ export const properties = [
   },
   {
     id: 'prop4',
-    type: 'Apartment',
+    type: 'Flat',
     bedrooms: 1,
     price: 28500000,
     tenure: 'Freehold',
@@ -163,7 +163,7 @@ export const properties = [
   },
   {
     id: 'prop6',
-    type: 'Apartment',
+    type: 'Flat',
     bedrooms: 3,
     price: 52000000,
     tenure: 'Freehold',
