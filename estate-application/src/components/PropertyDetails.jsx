@@ -1,18 +1,24 @@
 import { useState } from 'react';
 
 function PropertyDetails({ property, onBack, onToggleFavourite, isFavourite }) {
+  // Controls which tab is currently visible (description, floorplan, map)
   const [activeTab, setActiveTab] = useState('description');
+
+  // Tracks which image is shown as the main gallery image
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
+  // Updates the main image when a thumbnail is clicked
   const handleImageClick = (index) => {
     setActiveImageIndex(index);
   };
 
   return (
     <div className="property-details">
+      {/* Back navigation */}
       <button type="button" className="link-button" onClick={onBack}>
         ← Back to search
       </button>
+      {/* Property header with key details */}
       <header className="property-header">
         <div>
           <h1>
@@ -27,6 +33,8 @@ function PropertyDetails({ property, onBack, onToggleFavourite, isFavourite }) {
             {property.added.toLocaleDateString('en-GB')}
           </p>
         </div>
+
+        {/* Favourite toggle button */}
         <button
           type="button"
           className={isFavourite ? 'secondary' : ''}
@@ -36,6 +44,7 @@ function PropertyDetails({ property, onBack, onToggleFavourite, isFavourite }) {
         </button>
       </header>
 
+      {/* Image gallery section */}  
       <section className="gallery">
         <div className="gallery-main">
           <img
@@ -43,6 +52,8 @@ function PropertyDetails({ property, onBack, onToggleFavourite, isFavourite }) {
             alt={`${property.type} main view`}
           />
         </div>
+
+        {/* Thumbnail navigation */}
         <div className="gallery-thumbnails">
           {property.pictures.map((src, index) => (
             <button
@@ -61,6 +72,7 @@ function PropertyDetails({ property, onBack, onToggleFavourite, isFavourite }) {
         </div>
       </section>
 
+      {/* Tabbed content section */}
       <section className="tabs">
         <div className="tabs-list" role="tablist" aria-label="Property details">
           <button

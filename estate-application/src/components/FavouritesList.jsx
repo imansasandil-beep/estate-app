@@ -6,10 +6,13 @@ function FavouritesList({
   onDropAdd,
   onView,
 }) {
+
+    // Build a list of full property objects from favourite IDs
   const favouriteProperties = favourites
     .map((id) => properties.find((p) => p.id === id))
     .filter(Boolean);
 
+    // Handle dropping a property into the favourites panel
   const handleDrop = (event) => {
     event.preventDefault();
     const id = event.dataTransfer.getData('text/plain');
@@ -18,10 +21,12 @@ function FavouritesList({
     }
   };
 
+  // Allow drag over
   const handleDragOver = (event) => {
     event.preventDefault();
   };
 
+  // Handle dropping a property into the remove area
   const handleRemoveDrop = (event) => {
     event.preventDefault();
     const id = event.dataTransfer.getData('text/plain');
@@ -40,6 +45,8 @@ function FavouritesList({
       <p className="favourites-hint">
         Drag properties here or use the "Add to favourites" button.
       </p>
+
+      {/* Dropzone for adding favourites */}
       <div
         className="favourites-dropzone"
         onDrop={handleDrop}
@@ -59,6 +66,7 @@ function FavouritesList({
                   event.dataTransfer.effectAllowed = 'move';
                 }}
               >
+                {/* Clicking this opens the property details */}
                 <button
                   type="button"
                   className="link-button"
@@ -67,6 +75,8 @@ function FavouritesList({
                   {property.type} in {property.postcodeArea} – £
                   {property.price.toLocaleString('en-GB')}
                 </button>
+
+                {/* Button to remove the property from favourites */}
                 <button
                   type="button"
                   className="icon-button"
@@ -80,6 +90,8 @@ function FavouritesList({
           </ul>
         )}
       </div>
+
+      {/* Clears all favourite properties */}
       <button
         type="button"
         className="secondary full-width"
@@ -88,6 +100,8 @@ function FavouritesList({
       >
         Clear favourites
       </button>
+
+      {/* Dropzone for removing favourites via drag-and-drop */}
       <div
         className="favourites-remove-dropzone"
         onDrop={handleRemoveDrop}

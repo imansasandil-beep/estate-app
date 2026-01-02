@@ -1,4 +1,6 @@
 function SearchForm({ criteria, onChange }) {
+
+  // Handles simple text/select inputs
   const handleChange = (field) => (event) => {
     const value = event.target.value;
     onChange({
@@ -7,6 +9,7 @@ function SearchForm({ criteria, onChange }) {
     });
   };
 
+  // Converts number inputs to actual numbers 
   const handleNumberChange = (field) => (event) => {
     const value = event.target.value;
     onChange({
@@ -15,6 +18,7 @@ function SearchForm({ criteria, onChange }) {
     });
   };
 
+  // Keeps date values consistent when selecting or clearing dates
   const handleDateChange = (field) => (event) => {
     const value = event.target.value;
     onChange({
@@ -24,8 +28,11 @@ function SearchForm({ criteria, onChange }) {
   };
 
   return (
+    // Form auto submission is prevented
     <form className="search-form" onSubmit={(e) => e.preventDefault()}>
       <h2 className="section-title">Search properties</h2>
+
+      {/* Property type and postcode filter */}
       <div className="form-row">
         <label className="form-field">
           <span>Type</span>
@@ -45,6 +52,7 @@ function SearchForm({ criteria, onChange }) {
           />
         </label>
       </div>
+      {/* Price range filters */}
       <div className="form-row">
         <label className="form-field">
           <span>Min price (£)</span>
@@ -87,6 +95,8 @@ function SearchForm({ criteria, onChange }) {
           />
         </label>
       </div>
+
+      {/* Date range filter */}
       <div className="form-row">
         <label className="form-field">
           <span>Added from</span>

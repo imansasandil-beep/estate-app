@@ -10,6 +10,7 @@ import {
   removeFavourite,
 } from './search';
 
+// A reusable mock property for testing
 const sampleProperty = {
   id: 'p1',
   type: 'House',
@@ -19,6 +20,7 @@ const sampleProperty = {
   added: new Date(2025, 0, 15),
 };
 
+// Tests related to price filtering logic
 describe("Price matching", () => {
     test("Accepts within range", () =>{expect(matchesPrice(sampleProperty,400000,600000)).toBe(true);}) 
 
@@ -28,6 +30,7 @@ describe("Price matching", () => {
 }
 );
 
+// Tests for bedroom range filtering
 describe("Bedroom matching", () => {
   test("Accept within bedroom range", () =>{expect(matchesBedrooms(sampleProperty,2,5)).toBe(true)})
 
@@ -36,12 +39,14 @@ describe("Bedroom matching", () => {
   test("Rejects above maximum" ,() => {expect(matchesBedrooms(sampleProperty,null,2)).toBe(false)})
 });
 
+// Tests for property type and postcode matching
 describe("Type and postcode matching", () => {
   test("Matches type without case sensitive" ,() => {expect(matchesType(sampleProperty,"House")).toBe(true)})
 
   test("matches postcode area without case sensitive", () => {expect(matchesPostcode(sampleProperty,"br1")).toBe(true)
 })});
 
+// Tests for property type and postcode matching
 describe("Added date matching" ,()=> {
   test("accepts within date range", ()=> {
     const from = new Date(2025,0,1);
@@ -55,6 +60,7 @@ describe("Added date matching" ,()=> {
   })
 })
 
+// Tests the full filterProperties function with another criteria
 describe("FilterProperties" , () => {const anotherProperty = {
   ...sampleProperty,
   id : 'p2',
@@ -84,6 +90,7 @@ describe("FilterProperties" , () => {const anotherProperty = {
 
 });
 
+// Tests for favourites helper functions
 describe('favourites helpers', () => {
   test('addFavourite adds and prevents duplicates', () => {
     const initial = [];

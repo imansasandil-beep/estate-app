@@ -8,6 +8,7 @@ import FavouritesList from './components/FavouritesList';
 import PropertyDetails from './components/PropertyDetails';
 
 function App() {
+  // Search criteria controlled by the SearchForm
   const [criteria, setCriteria] = useState({
     type: 'Any',
     minPrice: '',
@@ -18,10 +19,17 @@ function App() {
     fromDate: '',
     toDate: '',
   });
+
+  // Stores property IDs that the user has favourited
   const [favourites, setFavourites] = useState([]);
+
+  // switches from the list view to the details view when set
   const [selectedPropertyId, setSelectedPropertyId] = useState(null);
 
+  // Convert date inputs into  objects
   const parseDate = (value) => (value ? new Date(value) : null);
+
+  // Normalise criteria so filtering logic is easier and consistent
   const parsedCriteria = {
     type: criteria.type,
     minPrice: criteria.minPrice === '' ? null : criteria.minPrice,
@@ -33,8 +41,10 @@ function App() {
     toDate: parseDate(criteria.toDate),
   };
 
+  // Apply all filters to the full property list
   const filtered = filterProperties(allProperties, parsedCriteria);
 
+  // Favourite handlers keep state updates predictable and clean
   const handleAddFavourite = (propertyId) => {
     setFavourites((current) => addFavourite(current, propertyId));
   };
@@ -47,16 +57,21 @@ function App() {
     setFavourites(clearFavourites());
   };
 
+  // Switch to the property details page
   const handleViewProperty = (id) => {
     setSelectedPropertyId(id);
   };
 
+   // Return from details view back to search/results
   const handleBackToSearch = () => {
     setSelectedPropertyId(null);
   };
 
+  // If a property is selected, render the details page instead of the list
   if (selectedPropertyId) {
     const property = allProperties.find((p) => p.id === selectedPropertyId);
+
+    // Safety check in case the ID is invalid
     if (!property) {
       return (
         <div className="app">
@@ -88,17 +103,21 @@ function App() {
     );
   }
 
+  // Default view: search form, results list, and favourites panel
   return (
     <div className="app">
       <header className="site-header">
-        <h1>Westminster Estates</h1>
+        <h1> Sri Lankan Estates </h1>
         <p className="tagline">
-          Search houses and flats for sale across Bromley and Orpington.
+          Search houses and flats for sale across Sri Lanka.
         </p>
       </header>
       <main className="layout">
         <section className="search-and-results">
+          {/* Search controls */}
           <SearchForm criteria={criteria} onChange={setCriteria} />
+
+          {/* Results section */}
           <section className="results">
             <h2 className="section-title">
               Results ({filtered.length} of {allProperties.length})
@@ -122,6 +141,8 @@ function App() {
             )}
           </section>
         </section>
+
+        {/* Sidebar showing favourited properties */}
         <FavouritesList
           properties={allProperties}
           favourites={favourites}

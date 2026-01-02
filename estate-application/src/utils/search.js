@@ -1,3 +1,4 @@
+// Checks whether a property price falls within the given range
 export function matchesPrice(property, minPrice, maxPrice) {
   const { price } = property;
   if (minPrice != null && price < minPrice) return false;
@@ -12,11 +13,13 @@ export function matchesBedrooms(property, minBedrooms, maxBedrooms) {
     return true;
 }
 
+// Matches property type, ignoring case and allowing "Any"
 export function matchesType(property,type){
     if (!type || type === 'Any') return true;
     return property.type.toLowerCase() === type.toLowerCase()
 }
 
+// Matches property type, ignoring case and allowing "Any"
 export function matchesPostcode(property, postcodeArea) {
   if (!postcodeArea) return true;
   return (
@@ -24,6 +27,7 @@ export function matchesPostcode(property, postcodeArea) {
   );
 }
 
+// Checks whether the property was added within the selected date range
 export function matchesAddedDate(property, fromDate, toDate) {
   if (!fromDate && !toDate) return true;
   const addedDate = property.added;
@@ -32,6 +36,7 @@ export function matchesAddedDate(property, fromDate, toDate) {
   return true;
 }
 
+// Runs all individual checks to return only matching properties
 export function filterProperties(properties, criteria) {
   const { type, minPrice, maxPrice, minBedrooms, maxBedrooms, postcodeArea, fromDate, toDate } = criteria;
   return properties.filter((property) => {
@@ -45,6 +50,7 @@ export function filterProperties(properties, criteria) {
   });
 }
 
+// Adds a property to favourites if it's not already there
 export function addFavourite(favourites, propertyID){
   if(favourites.includes(propertyID)){
     return favourites;
@@ -52,10 +58,12 @@ export function addFavourite(favourites, propertyID){
   return [...favourites,propertyID];
 }
 
+// Adds a property to favourites if it's not already there
 export function removeFavourite(favourites, propertyID){
     return favourites.filter((id) => id !== propertyID);
 }
 
+// Clears the entire favourites list
 export function clearFavourites(){
     return [];
 }
