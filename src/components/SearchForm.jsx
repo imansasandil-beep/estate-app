@@ -1,30 +1,47 @@
+import Select from 'react-select';
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
+
 function SearchForm({ criteria, onChange }) {
 
-  // Handles simple text/select inputs
+  // Options for the property type dropdown widget
+  const typeOptions = [
+    { value: 'Any', label: 'Any' },
+    { value: 'House', label: 'House' },
+    { value: 'Flat', label: 'Flat' }
+  ];
+
+  // Handles simple text inputs
   const handleChange = (field) => (event) => {
-    const value = event.target.value;
+    onChange({ ...criteria, [field]: event.target.value });
+  };
+
+  // React-Select returns an object, so we extract the value
+  const handleSelectChange = (selectedOption) => {
+    onChange({ ...criteria, type: selectedOption.value });
+  };
+
+  // Price slider returns an array with [min, max] values
+  const handlePriceChange = (values) => {
     onChange({
       ...criteria,
-      [field]: value,
+      minPrice: values[0] || '',
+      maxPrice: values[1] || ''
     });
   };
 
-  // Converts number inputs to actual numbers 
-  const handleNumberChange = (field) => (event) => {
-    const value = event.target.value;
+  // Bedroom slider works the same way as price
+  const handleBedroomChange = (values) => {
     onChange({
       ...criteria,
-      [field]: value ? Number(value) : '',
+      minBedrooms: values[0] || '',
+      maxBedrooms: values[1] || ''
     });
   };
 
   // Keeps date values consistent when selecting or clearing dates
   const handleDateChange = (field) => (event) => {
-    const value = event.target.value;
-    onChange({
-      ...criteria,
-      [field]: value || '',
-    });
+    onChange({ ...criteria, [field]: event.target.value || '' });
   };
 
   return (
@@ -36,64 +53,51 @@ function SearchForm({ criteria, onChange }) {
       <div className="form-row">
         <label className="form-field">
           <span>Type</span>
-          <select value={criteria.type} onChange={handleChange('type')}>
-            <option value="Any">Any</option>
-            <option value="House">House</option>
-            <option value="Flat">Flat</option>
-          </select>
+          <Select
+            value={typeOptions.find(opt => opt.value === criteria.type)}
+            onChange={handleSelectChange}
+            options={typeOptions}
+          />
         </label>
         <label className="form-field">
           <span>Postcode area</span>
           <input
             type="text"
-            placeholder="e.g. BR1"
+            placeholder="e.g. Colombo"
             value={criteria.postcodeArea}
             onChange={handleChange('postcodeArea')}
           />
         </label>
       </div>
-      {/* Price range filters */}
+
+      {/* Price range slider widget */}
       <div className="form-row">
-        <label className="form-field">
-          <span>Min price (£)</span>
-          <input
-            type="number"
-            min="0"
-            step="5000"
-            value={criteria.minPrice}
-            onChange={handleNumberChange('minPrice')}
+        <div className="form-field" style={{gridColumn: '1 / -1'}}>
+          <span>Price Range: Rs. {criteria.minPrice || 0} - Rs. {criteria.maxPrice || 150000000}</span>
+          <Slider
+            range
+            min={0}
+            max={150000000}
+            step={5000000}
+            value={[criteria.minPrice || 0, criteria.maxPrice || 150000000]}
+            onChange={handlePriceChange}
           />
-        </label>
-        <label className="form-field">
-          <span>Max price (£)</span>
-          <input
-            type="number"
-            min="0"
-            step="5000"
-            value={criteria.maxPrice}
-            onChange={handleNumberChange('maxPrice')}
-          />
-        </label>
+        </div>
       </div>
+
+      {/* Bedroom range slider widget */}
       <div className="form-row">
-        <label className="form-field">
-          <span>Min bedrooms</span>
-          <input
-            type="number"
-            min="0"
-            value={criteria.minBedrooms}
-            onChange={handleNumberChange('minBedrooms')}
+        <div className="form-field" style={{gridColumn: '1 / -1'}}>
+          <span>Bedrooms: {criteria.minBedrooms || 0} - {criteria.maxBedrooms || 10}</span>
+          <Slider
+            range
+            min={0}
+            max={10}
+            step={1}
+            value={[criteria.minBedrooms || 0, criteria.maxBedrooms || 10]}
+            onChange={handleBedroomChange}
           />
-        </label>
-        <label className="form-field">
-          <span>Max bedrooms</span>
-          <input
-            type="number"
-            min="0"
-            value={criteria.maxBedrooms}
-            onChange={handleNumberChange('maxBedrooms')}
-          />
-        </label>
+        </div>
       </div>
 
       {/* Date range filter */}
@@ -120,4 +124,3 @@ function SearchForm({ criteria, onChange }) {
 }
 
 export default SearchForm;
-

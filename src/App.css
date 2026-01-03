@@ -399,6 +399,10 @@ button.full-width {
   border-radius: 0.75rem;
 }
 
+.rc-slider {
+  margin: 1rem 0;
+}
+
 @media (max-width: 1024px) {
   .layout {
     grid-template-columns: minmax(0, 1fr);
