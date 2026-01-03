@@ -34,7 +34,7 @@ export const properties = [
     location: 'Pagoda Road, Nugegoda',
     postcodeArea: 'Colombo',
     pictures: [
-      'images./prop1pic1large.jpg',
+      '/images/prop1pic1large.JPG',
       '/images/prop1pic2.jpg',
       '/images/prop1pic3.jpg',
       '/images/prop1pic4.jpg',
