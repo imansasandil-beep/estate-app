@@ -107,7 +107,7 @@ function App() {
   return (
     <div className="app">
       <header className="site-header">
-        <h1> Sri Lankan Estates </h1>
+        <h1> Ceylon Estates </h1>
         <p className="tagline">
           Search houses and flats for sale across Sri Lanka.
         </p>
